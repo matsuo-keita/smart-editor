@@ -4,7 +4,9 @@ import React, { useState } from "react";
 const Editor = () => {
   return (
     <div className="App">
+      <header className="App-header">
         <EditorArea />
+      </header>
     </div>
   );
 }
