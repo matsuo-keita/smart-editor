@@ -10,8 +10,8 @@ const Editor = () => {
 }
 
 const EditorArea = () => {
-  const [texts, setText] = useState(["","|"]);
-  const [row, setRow] = useState(1);
+  const [texts, setText] = useState([""]);
+  const [row, setRow] = useState(0);
 
   const buttonClick = (event:any) =>{
     let char:string;
@@ -24,21 +24,20 @@ const EditorArea = () => {
     }else{
       char = event.target.innerHTML;
     }
-    texts[row] = texts[row].slice(0, -1) + char + "|"
+    texts[row] = texts[row] + char
     setText([...texts]);
   }
   const buttonDelete = () =>{
-    texts[row] = texts[row].slice(0, -2) + "|"
+    texts[row] = texts[row].slice(0, -1)
     setText([...texts]);
   }
   const buttonSpace = () =>{
-    texts[row] = texts[row].slice(0, -1) + " |"
+    texts[row] = texts[row] + " "
     setText([...texts]);
   }
   const buttonEnter = () =>{
     setRow(row + 1);
-    texts[row] = texts[row].slice(0, -1)
-    setText([...texts,"|"]);
+    setText([...texts,""]);
   }
   const buttons = [
     ["q","w","e","r","t","y","u","i","o","p"],
@@ -50,8 +49,8 @@ const EditorArea = () => {
   ]
   return (
     <div>
-      {[...Array(row)].map((item,index) => 
-        <div className="editor-line"><span>{index + 1}</span> {texts[index + 1]}</div>)
+      {[...Array(row + 1)].map((item,index) => 
+        <div className="editor-line"><span>{index + 1}</span> {texts[index]}</div>)
       }
       <RunButton codeText={texts}/>
       { buttons.map((buttonRow,rowIndex) => 
@@ -71,12 +70,15 @@ const EditorArea = () => {
 }
 
 const RunButton = (props:any) => {
+  const [result, setResult] = useState("");
   const runJS = () =>{
-    console.log(props.codeText)
+    setResult(eval(props.codeText.join(" ")))
   }
   return (
     <div>
       <button className="run-button" onClick={runJS}>Run</button>
+        <div>Result</div>
+        <div>{result}</div>
     </div>
   );
 }
