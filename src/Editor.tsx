@@ -43,7 +43,7 @@ const EditorArea = () => {
       <div style={{"width":"300px"}}>1 {texts[1]}</div>
       <div>2 {texts[2]}</div>
       <div>3 {texts[3]}</div>
-      <div>実行</div>
+      <div>Run</div>
       <div className="row1">
         { buttonsRow1.map((item,index) => <button onClick={buttonClick} key={index}>{item}</button>) }
       </div>
