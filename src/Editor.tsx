@@ -50,9 +50,9 @@ const EditorArea = () => {
   ]
   return (
     <div>
-      <div className="editor-line">1 {texts[1]}</div>
-      <div>2 {texts[2]}</div>
-      <div>3 {texts[3]}</div>
+      {[...Array(row)].map((item,index) => 
+        <div className="editor-line"><span>{index + 1}</span> {texts[index + 1]}</div>)
+      }
       <button className="run-button">Run</button>
       { buttons.map((buttonRow,rowIndex) => 
         <div>

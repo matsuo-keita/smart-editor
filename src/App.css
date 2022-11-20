@@ -10,7 +10,9 @@
 .editor-line {
   width:300px;
 }
-
+.editor-line span{
+  margin-right: 10px;
+}
 .run-button{
   background-color: green;
 }

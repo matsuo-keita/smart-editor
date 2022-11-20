@@ -46,10 +46,10 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 ### やる事
-Enterを押した時に勝手に行数を増やしたい
 各行の何文字目かの状態管理も必要そう
 spaceを2つ押したら、2つぶんのスペースが出るようにする
 矢印で移動出来るようにする
 js実行出来るようにする
 キーボードコンポーネントと、エディターコンポーネントに分ける
 値の渡し方について調べる
+should have a unique "key" prop.のエラーを解消する
