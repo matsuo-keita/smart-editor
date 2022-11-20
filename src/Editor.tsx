@@ -4,9 +4,7 @@ import React, { useState } from "react";
 const Editor = () => {
   return (
     <div className="App">
-      <header className="App-header">
         <EditorArea />
-      </header>
     </div>
   );
 }
@@ -40,7 +38,7 @@ const EditorArea = () => {
   const buttonsRow6 = ["←","↑","→","↓"]
   return (
     <div>
-      <div style={{"width":"300px"}}>1 {texts[1]}</div>
+      <div className="editor-line">1 {texts[1]}</div>
       <div>2 {texts[2]}</div>
       <div>3 {texts[3]}</div>
       <div>Run</div>

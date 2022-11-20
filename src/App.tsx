@@ -3,7 +3,7 @@ import Editor from './Editor';
 
 const App = () => {
   return (
-    <div className="App">
+    <div>
       <Editor />
     </div>
   );
