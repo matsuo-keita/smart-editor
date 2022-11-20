@@ -53,7 +53,7 @@ const EditorArea = () => {
       {[...Array(row)].map((item,index) => 
         <div className="editor-line"><span>{index + 1}</span> {texts[index + 1]}</div>)
       }
-      <button className="run-button">Run</button>
+      <RunButton codeText={texts}/>
       { buttons.map((buttonRow,rowIndex) => 
         <div>
          {buttonRow.map((item,index) => <button onClick={buttonClick} key={ 100 * rowIndex + index}>{item}</button>)}
@@ -66,6 +66,17 @@ const EditorArea = () => {
       <button onClick={buttonEnter}>↑</button>
       <button onClick={buttonEnter}>→</button>
       <button onClick={buttonEnter}>↓</button>
+    </div>
+  );
+}
+
+const RunButton = (props:any) => {
+  const runJS = () =>{
+    console.log(props.codeText)
+  }
+  return (
+    <div>
+      <button className="run-button" onClick={runJS}>Run</button>
     </div>
   );
 }
